@@ -130,13 +130,15 @@
 | **라이브러리**   | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy) ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas) ![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib) <br> ![Seaborn](https://img.shields.io/badge/seaborn-0C5A5A?style=for-the-badge&logo=Seaborn) ![scikitlearn](https://img.shields.io/badge/scikitlearn-green?style=for-the-badge&logo=scikitlearn) ![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=for-the-badge&logo=lightgbm) ![XGBoost](https://img.shields.io/badge/XGBoost-FF6600?style=for-the-badge&logo=xgboost)|
 | **협업 툴**      | ![GitHub](https://img.shields.io/badge/github-121011?style=for-the-badge&logo=github) ![Git](https://img.shields.io/badge/git-F05033?style=for-the-badge&logo=git)|
 
+<br>
 
 ---
+
 ## 3. WBS 
 
 <img src="./img/WBS.png" width=700/>
 
-
+<br>
 
 
 ---
@@ -316,12 +318,14 @@
 ## 6. 머신러닝 파이프라인 
 
 ### 6.1 사용 피처
+
 - **Target**: `churn`
 - **Features**: `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area_grouped`, 
 
   <br>
 
 ### 6.2 전처리 전략
+
 | **변수 유형** | **변수명** | **전처리 방법** |
 |---|---|---|
 | 수치형 | `age` | StandardScaler |
@@ -333,6 +337,7 @@
 <br>
 
 ### 6.3 클래스 불균형 처리 
+
 <img src="./img/churn_rate.png" width=300/>
 
 - **원본 분포**: Churn 0 ≈ 89.4%, 1 ≈ 10.6%
@@ -343,12 +348,13 @@
 ### 6.4 모델 성능 향상 전략 
 
 #### 6.4.1 Base Model
+
 - **기본 features 구성**: 7개의 기본 features만 사용
   - `gender`, `living_area`, `job`, `age`, `education`, `income`, `child`, `experience`
 
   - model들을 돌렸을 때 Stacking 모델이 가장 높은 성능을 보임
 
-<img src="./img/all_acc.png" width=300/>
+<img src="./img/all_acc.png" width=500/>
 
 
   
@@ -356,6 +362,7 @@
 <br>
 
 #### 6.4.2 Updated Features
+
 - **변수 제거**: 상관계수가 매우 낮아 상관관계가 없다고 판단된 변수 `child` 제거
 
 - **새로운 파생변수 추가**: 
@@ -377,7 +384,7 @@
 - ElasticNet
 - KNeighborsClassifier
 
-<img src="./img/best_model.png" width=800/>
+<img src="./img/best_model.png" width=600/>
 
 
 
@@ -400,12 +407,14 @@
 
 
 **하이퍼파라미터 적용 전**
-<img src="./img/best_model.png" width=800/>
+
+<img src="./img/best_model.png" width=500/>
 
 
 
 **하이퍼파라미터 적용 후**
-<img src="./img/after_acc.png" width=800/>
+
+<img src="./img/after_acc.png" width=500/>
 
 
 <br>
@@ -447,7 +456,8 @@
 <br>
 
 ### 9.3 Train/Test Split 이전 SMOTE 적용 여부
-<img src="./img/smote_acc.png" width=800/>
+
+<img src="./img/smote_acc.png" width=600/>
 
 실제 서비스를 운영할 환경(Production Environment)에서도 불균형은 그대로 존재할 가능성이 높음
 따라서 인위적인 데이터 비율 조정은 현실과 괴리된 평가 결과를 유발할 수 있다고 판단,불균형 데이터셋을 그대로 유지한 채로 모델을 평가
