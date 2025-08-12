@@ -1,4 +1,4 @@
-# 2nd_PROJECT_2TEAM
+# 2nd_PROJECT_2TEAM 2팀이지롱~
 
 <br>
 
