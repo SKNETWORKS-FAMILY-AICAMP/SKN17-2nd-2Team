@@ -20,7 +20,7 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 
 ## 🌟 **팀원 소개**  
 
-| 🧑 [양송이](https://github.com/songeeeey) | 👩 [박지수](https://github.com/0lipa) | 👩 [조세희](https://github.com/SEHEE-8546) | 👨💻 [김세한](https://github.com/kimsehan11) | 👨💻 [양정민](https://github.com/Yangmin3) |
+| 👩 [양송이](https://github.com/songeeeey) | 👩 [박지수](https://github.com/0lipa) | 🧑 [조세희](https://github.com/SEHEE-8546) | 👨 [김세한](https://github.com/kimsehan11) | 👨 [양정민](https://github.com/Yangmin3) |
 |---|---|---|---|---|
 | <img src="https://media.discordapp.net/attachments/1400759170554134642/1403278401145409588/common.png?ex=689a441a&is=6898f29a&hm=eeecc312efc1fb959612d8b93f1b99c7d6196a580ea0046aa65ad8c3a428f87d&=&format=webp&quality=lossless" width="100" height="120"/> | <img src="https://media.discordapp.net/attachments/1400759170554134642/1403276966345314335/9791190090018.png?ex=689a42c4&is=6898f144&hm=1a9deea947bb2688576e0b7ffeb01bec42274d6d6279f9e1a978180e6c094cb2&=&format=webp&quality=lossless" width="100" height="120"/> | <img src="https://media.discordapp.net/attachments/1400759170554134642/1403282772809875527/common.png?ex=689a482c&is=6898f6ac&hm=c3b9fcebb703fe22680feb40565c7600fe1445512bdc4b3a1ffe93cd3bd84ca9&=&format=webp&quality=lossless" width="100" height="120"/> | <img src="https://media.discordapp.net/attachments/1400759639406149632/1404376930970767370/image.png?ex=689af770&is=6899a5f0&hm=2aada222acef845fea3f9c513811fbf52bda32e6bde0763e8d3036c061641acf&=&format=webp&quality=lossless&width=535&height=684" width="100" height="120"/> | <img src="https://media.discordapp.net/attachments/1400759170554134642/1403276124313747506/image0.jpg?ex=689a41fb&is=6898f07b&hm=7e865106d3e8ad4944210cfe49eb759b6dab9ae95a3eecc5d090a02a78530833&=&format=webp" width="100" height="120"/> |
 
@@ -271,13 +271,13 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 <br>
 
 
-<br>
-
 ## 6. 머신러닝 파이프라인 🔧
 
 ### 6.1 사용 피처
 - **Target**: `churn`
 - **Features**: `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area_grouped`, `distance`
+
+  <br>
 
 ### 6.2 전처리 전략
 | **변수 유형** | **변수명** | **전처리 방법** |
@@ -286,12 +286,16 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 | 명목형(순서X) | `living_area_grouped`, `job`, `experience` | OneHotEncoder |
 | 순서형 | `gender`, `income`, `distance`, `education` | Label Encoding |
 
-- **파이프라인 구성**: ColumnTransformer + Pipeline 
+- **파이프라인 구성**: ColumnTransformer + Pipeline
+
+<br>
 
 ### 6.3 클래스 불균형 처리 ⚖️
 - **원본 분포**: Churn 0 ≈ 89.4%, 1 ≈ 10.6%
 - **클래스 불균형 사진**
-- **적용 기법**: **SMOTE** 
+- **적용 기법**: **SMOTE**
+
+<br>
 
 ### 6.4 모델 구성 및 성능 향상 전략 
 
@@ -300,11 +304,15 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
   - `gender`, `living_area`, `job`, `age`, `education`, `income`, `child`
 - **여기에 base model 사진**
 
+<br>
+
 #### 6.4.2 Updated Features
 - **변수 제거**: 상관계수가 매우 낮아 상관관계가 없다고 판단된 변수 `child` 제거
 - **새로운 파생변수 추가**: 
   - `distance`: 새로운 파생변수 distance 추가 
   - `living_area_grouped`: 거주지/소득과 도서관 이용률간의 상관관계가 존재한다는 [기사](https://www.sisain.co.kr/news/articleView.html?idxno=47046)를 바탕으로 지역 `living_area`를 경제·상권 특성으로 그룹화한 `living_area_grouped` 변수 추가
+ 
+<br>
 
 #### 6.4.3 Best Model: **Stacking Ensemble**
 
@@ -322,6 +330,8 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 
 **제일 잘 나온 성능 사진**
 
+<br>
+
 ---
 
 ## 7. 모델 성능 결과 
@@ -332,6 +342,8 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 
 ** 하이퍼파라미터 조정**: hyperopt를 통해 진행
 
+<br>
+
 #### 7.1.1 성능 비교
 <img width="800" height="250" alt="Image" src="./readme_data/before_webp" />
 
@@ -340,6 +352,8 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 <img width="800" height="250" alt="Image" src="./readme_data/after_webp" />
 
 **하이퍼파라미터 적용 후**
+
+<br>
 
 ---
 
@@ -351,6 +365,8 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 - **선별적 고객 관리**: 이탈 확률이 높은 고객에게만 집중적으로 개인 맞춤형 서비스(책 추천, 프로그램 소개, 개별 상담 등)를 제공
 - **인력 및 예산 최적화**: 모든 이용자가 아닌 고위험군에게만 자원을 집중 투입하여 운영 효율성 극대화
 
+<br>
+
 ### 8.2 전체 이용자 대상 정책 수립 지원
 
 예측 모델 분석 결과를 통해 이탈 위험이 높은 **인구통계학적 집단**을 식별하고, 해당 집단에 특화된 정책을 수립
@@ -360,18 +376,24 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 - **예방적 정책 수립**: 이탈 요인 분석을 바탕으로 근본적인 서비스 개선 방향 설정
 - **예산 효율성**: 전체 이용자 대상이 아닌 특정 집단에 집중하여 정책 효과 극대화 및 예산 절약
 
+<br>
+
 ### 8.3 운영 전략 제언
 
 1. **단계별 적용**: 먼저 고위험 개별 고객 관리를 통해 즉시 효과를 확인한 후, 장기적으로 정책 수준의 개선 방안 적용
 2. **지속적 모델 업데이트**: 새로운 이용자 데이터를 주기적으로 반영하여 예측 정확도 지속 개선
 3. **성과 측정**: 이탈 방지 프로그램 적용 전후의 이탈률 변화를 정량적으로 측정하여 효과 검증
 
+<br>
+
 ---
 
 ## 9. 한계점 
 
 ### 9.1 불균형 데이터 처리
-- SMOTE를 통한 균형 조정에도 불구하고 여전히 존재하는 클래스 불균형 문제 → **낮은 precision** 
+- SMOTE를 통한 균형 조정에도 불구하고 여전히 존재하는 클래스 불균형 문제 → **낮은 precision**
+
+<br>
 
 ### 9.2 개인특성 이외의 변수
 - 현재 사용된 변수 외에 추가적인 파생 변수 생성 가능
