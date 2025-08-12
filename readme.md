@@ -47,11 +47,18 @@
 >_농민 뉴스: [북캉스’ 최적지 공공도서관 …지난해 이용자 2억명 ‘훌쩍’](https://www.nongmin.com/article/20240806500181?utm_source=chatgpt.com)_
 
 <br>
+
+### 그러나,
+
 <br>
 
 <img src="./img/도서관이용자수그래프.png"/>
 
 >_출처: [통계청 지표누리](https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1639)_
+
+<br>
+
+
 
 <br>
 
@@ -144,7 +151,7 @@
 
 <br>
 
-**서울특별시 서울시민의 도서관 이용실태 설문조사 데이터**
+**🗨️ 서울특별시 서울시민의 도서관 이용실태 설문조사 데이터**
 
 <br>
 
@@ -183,7 +190,7 @@
 ### 5.1 데이터 전처리
 
 #### 5.1.1 결측치 처리
-- `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area`, `distance`, `future_use ` 전부 결측치 없음.
+- `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area`, `distance`, `future_use` 전부 결측치 없음.
 
   <img src="./img/결측치없음.png" width=300/> 
 
@@ -208,8 +215,9 @@
 - education (학력) 
 
   - 고등학교 졸업 + 대학교 중퇴 -> "고등학교 졸업"으로 변환
+  - 대학교 졸업 + 전문대 졸업 + 4년제 졸업 -> "대학교 졸업"으로 변
 
-  <img src="./img/학력전처리.png"/> --> 사진 수정!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  <img src="./img/학력전처리.png"/> 
 
 (2) 0과 1 등으로 이진화
 
@@ -218,7 +226,7 @@
   -  "0(없다), 1(있다)"로 변환
 
     <img src="./img/1년이용전처리.png"/> 
-    -> 사진 ???????????????? 
+
 
 
 ### 5.2. 최종 데이터 구조
