@@ -1,4 +1,4 @@
-# 2nd_PROJECT_2TEAM 2팀
+# 🔖2nd_PROJECT_2TEAM 2팀
 
 <br>
 
@@ -10,8 +10,9 @@
 
 <br>
 
-Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라는 프로젝트의 핵심 주제를 직관적으로 표현하였습니다.
-데이터 분석을 통해 도서관 이용자 이탈 현상을 이해하고, 이를 기반으로 효과적인 운영 전략을 제시하겠다는 **프로젝트의 목표**를 담고 있습니다.
+✔️ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라는 프로젝트의 핵심 주제를 직관적으로 표현하였습니다.
+
+✔️ 데이터 분석을 통해 도서관 이용자 이탈 현상을 이해하고, 이를 기반으로 효과적인 운영 전략을 제시하겠다는 **프로젝트의 목표**를 담고 있습니다.
 
 
 <br>
@@ -20,9 +21,10 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 
 ## 🌟 **팀원 소개**  
 
-| 👩 [양송이](https://github.com/songeeeey) | 👩 [박지수](https://github.com/0lipa) | 🧑 [조세희](https://github.com/SEHEE-8546) | 👨 [김세한](https://github.com/kimsehan11) | 👨 [양정민](https://github.com/Yangmin3) |
+| 💻👩 양송이 | 💻👩 박지수 | 💻🧑 조세희| 💻🧑 김세한 | 💻🧑 양정민 |
 |---|---|---|---|---|
-| <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> |
+| <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> | 
+|[@songeeeey](https://github.com/songeeeey)| [@0lipa](https://github.com/0lipa) | [@SEHEE-8546](https://github.com/SEHEE-8546) | [@kimsehan11](https://github.com/kimsehan11) | [Yangmin3](https://github.com/Yangmin3)|
 
 <br>
 
@@ -80,16 +82,13 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 > 
 > *(출처: 박성재, 2023.01.09,공공도서관 이용자는 도서관을 어떻게 이용하는가?, 한국문헌정보학회지)*
 
+<br>
 
 단순한 이용 통계만으로는 이탈 원인을 파악하기 어려우므로, **인구통계학적 특성**(성별, 연령, 거주지, 소득, 학력, 거리)과 **이용 경험 데이터**를 결합해 분석하는 예측 모델이 필요합니다.
 
 
 <br>
 
-
-
-
-<br>
 
 ---
 
@@ -165,7 +164,7 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 - 성별, 연령, 학력, 소득, 거주지역, 직업 등 인구통계학적 변수와 도서관 이용 여부 등 행동 패턴 변수를 모두 포함
 
 **② 이탈 여부 파생 변수 생성**
-- 설문 문항(미래 이용 의향)을 바탕으로 ‘이탈 여부(Churn)’ 컬럼 직접 생성 -> 다시 확인!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- 설문 문항(미래 이용 의향 없음 & 1년 안에 도서관을 간 적이 없는 사람)을 바탕으로 ‘이탈 여부(Churn)’ 컬럼 직접 생성 
 
 **③ 분류 모델 학습에 적합**
 - 수치형 및 범주형 변수가 혼합된 형태로, 다양한 분류 알고리즘 실험 가능
@@ -184,10 +183,9 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 ### 5.1 데이터 전처리
 
 #### 5.1.1 결측치 처리
-- `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area`, `distance`, `future_intent_of_use ` --> churn 파생 컬럼 되는거 확인!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!. 전부 결측치 없음
+- `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area`, `distance`, `future_use ` 전부 결측치 없음.
 
   <img src="./img/결측치없음.png" width=300/> 
-  --> 사진 수정!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 #### 5.1.2 이상치 처리
@@ -230,9 +228,9 @@ Library + Analytics의 합성어로, **도서관**과 **이탈률 분석**이라
 - `age` : 나이
 - `education` : 학력 수준
 - `income` : 소득 수준
+- `experience` : 1년 이내 도서관 이용 여부
 - `job` : 직업
 - `living_area_grouped` : 거주 지역 (서울시 구별 코드)
-- `experience` : 1년 이내 도서관 이용 여부
 - `distance` : 도서관과의 거리
 
 
