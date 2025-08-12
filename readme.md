@@ -313,11 +313,11 @@
 <br>
 
 
-## 6. 머신러닝 파이프라인 🔧
+## 6. 머신러닝 파이프라인 
 
 ### 6.1 사용 피처
 - **Target**: `churn`
-- **Features**: `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area_grouped`, `distance`
+- **Features**: `gender`, `age`, `education`, `income`, `experience`, `job`, `living_area_grouped`, 
 
   <br>
 
@@ -325,33 +325,40 @@
 | **변수 유형** | **변수명** | **전처리 방법** |
 |---|---|---|
 | 수치형 | `age` | StandardScaler |
-| 명목형(순서X) | `living_area_grouped`, `job`, `experience` | OneHotEncoder |
-| 순서형 | `gender`, `income`, `distance`, `education` | Label Encoding |
+| 명목형(순서X) | `gender`,`living_area_grouped`, `job`, `experience` | OneHotEncoder |
+| 순서형 | `income`, `education` | Label Encoding |
 
 - **파이프라인 구성**: ColumnTransformer + Pipeline
 
 <br>
 
-### 6.3 클래스 불균형 처리 ⚖️
+### 6.3 클래스 불균형 처리 
+<img src="./img/churn_rate.png" width=300/>
+
 - **원본 분포**: Churn 0 ≈ 89.4%, 1 ≈ 10.6%
-- **클래스 불균형 사진**
 - **적용 기법**: **SMOTE**
 
 <br>
 
-### 6.4 모델 구성 및 성능 향상 전략 
+### 6.4 모델 성능 향상 전략 
 
 #### 6.4.1 Base Model
 - **기본 features 구성**: 7개의 기본 features만 사용
-  - `gender`, `living_area`, `job`, `age`, `education`, `income`, `child`
-- **여기에 base model 사진**
+  - `gender`, `living_area`, `job`, `age`, `education`, `income`, `child`, `experience`
+
+  - model들을 돌렸을 때 Stacking 모델이 가장 높은 성능을 보임
+
+<img src="./img/all_acc.png" width=300/>
+
+
+  
 
 <br>
 
 #### 6.4.2 Updated Features
 - **변수 제거**: 상관계수가 매우 낮아 상관관계가 없다고 판단된 변수 `child` 제거
+
 - **새로운 파생변수 추가**: 
-  - `distance`: 새로운 파생변수 distance 추가 
   - `living_area_grouped`: 거주지/소득과 도서관 이용률간의 상관관계가 존재한다는 [기사](https://www.sisain.co.kr/news/articleView.html?idxno=47046)를 바탕으로 지역 `living_area`를 경제·상권 특성으로 그룹화한 `living_area_grouped` 변수 추가
  
 <br>
@@ -370,7 +377,10 @@
 - ElasticNet
 - KNeighborsClassifier
 
-**제일 잘 나온 성능 사진**
+<img src="./img/best_model.png" width=800/>
+
+
+
 
 <br>
 
@@ -387,44 +397,33 @@
 <br>
 
 #### 7.1.1 성능 비교
-<img width="800" height="250" alt="Image" src="./readme_data/before_webp" />
+
 
 **하이퍼파라미터 적용 전**
+<img src="./img/best_model.png" width=800/>
 
-<img width="800" height="250" alt="Image" src="./readme_data/after_webp" />
+
 
 **하이퍼파라미터 적용 후**
+<img src="./img/after_acc.png" width=800/>
+
 
 <br>
 
 ---
 
-## 8. 인사이트 및 정책 제언 
+## 8. 인사이트 
 
 ### 8.1 개별 이용자 맞춤형 이탈 방지 전략
 
 본 예측 모델을 활용하여 **최소한의 인구통계학적 특성만으로** 개별 이용자의 이탈 확률을 사전에 예측 가능
+
 - **선별적 고객 관리**: 이탈 확률이 높은 고객에게만 집중적으로 개인 맞춤형 서비스(책 추천, 프로그램 소개, 개별 상담 등)를 제공
+
 - **인력 및 예산 최적화**: 모든 이용자가 아닌 고위험군에게만 자원을 집중 투입하여 운영 효율성 극대화
 
 <br>
 
-### 8.2 전체 이용자 대상 정책 수립 지원
-
-예측 모델 분석 결과를 통해 이탈 위험이 높은 **인구통계학적 집단**을 식별하고, 해당 집단에 특화된 정책을 수립
-
-- **고위험 집단 식별**: 이탈 확률이 높게 나타나는 특정 연령대, 직업군, 학력 수준, 거주 지역 등을 데이터 기반으로 파악
-- **집단별 맞춤 프로그램**: 식별된 고위험 집단의 특성에 맞는 전용 프로그램 개발 및 운영
-- **예방적 정책 수립**: 이탈 요인 분석을 바탕으로 근본적인 서비스 개선 방향 설정
-- **예산 효율성**: 전체 이용자 대상이 아닌 특정 집단에 집중하여 정책 효과 극대화 및 예산 절약
-
-<br>
-
-### 8.3 운영 전략 제언
-
-1. **단계별 적용**: 먼저 고위험 개별 고객 관리를 통해 즉시 효과를 확인한 후, 장기적으로 정책 수준의 개선 방안 적용
-2. **지속적 모델 업데이트**: 새로운 이용자 데이터를 주기적으로 반영하여 예측 정확도 지속 개선
-3. **성과 측정**: 이탈 방지 프로그램 적용 전후의 이탈률 변화를 정량적으로 측정하여 효과 검증
 
 <br>
 
@@ -433,7 +432,8 @@
 ## 9. 한계점 
 
 ### 9.1 불균형 데이터 처리
-- SMOTE를 통한 균형 조정에도 불구하고 여전히 존재하는 클래스 불균형 문제 → **낮은 precision**
+- SMOTE를 통한 균형 조정에도 불구하고 여전히 존재하는 test data set에서의 클래스 불균형 문제 → **낮은 precision**
+- 데이터를 선택할 때, 클래스의 불균형까지 고려해서 선정할 필요성
 
 <br>
 
@@ -441,8 +441,18 @@
 - 현재 사용된 변수 외에 추가적인 파생 변수 생성 가능
   - `total reading time` : 총 독서 시간
   - `books per year` : 연간 독서량
-- **제거 사유**: 총 독서시간과 연간 독서량은 처음 보는 사람의 개인 특성으로 보기에는 어려움이 있어서 제거 
+- **제거 사유**: 총 독서시간과 연간 독서량은 처음 보는 사람의 개인 특성으로 보기에는 어려움이 있고, 또한 총 독서시간과 연간 독서량은 도서관을 이용하는 사람이면 당연히 높은 특성이기에 제거
 
+- 개인특성에 해당하면서, 성능을 높일 수 있는 파생변수를 찾지 못한 것이 아쉬움
+<br>
+
+### 9.3 Train/Test Split 이전 SMOTE 적용 여부
+<img src="./img/smote_acc.png" width=800/>
+
+실제 서비스를 운영할 환경(Production Environment)에서도 불균형은 그대로 존재할 가능성이 높음
+따라서 인위적인 데이터 비율 조정은 현실과 괴리된 평가 결과를 유발할 수 있다고 판단,불균형 데이터셋을 그대로 유지한 채로 모델을 평가
+
+비록 모델 성능이 이상적으로 높지는 않았지만,실제 현업에 적용 가능한 신뢰 가능한 기준선(Baseline)을 확보하는 것이 더 중요하다고 판단
 <br>
 
 ## 10. 수행 결과 페이지
