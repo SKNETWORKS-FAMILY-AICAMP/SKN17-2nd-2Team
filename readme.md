@@ -36,13 +36,13 @@
 
 <br>
 
-<img src="./img/리드미배경2.png" width="600"/>
+<img src="./img/리드미배경1.png" width="600"/>
 
 <br>
 
 >_디스커버리 뉴스: [문체부, '2025년 전국 공공도서관 통계조사' 결과 발표](https://www.discoverynews.kr/news/articleView.html?idxno=1064416&utm_source=chatgpt.com)_
 
-<img src="./img/리드미배경3.png" width="600"/>
+<img src="./img/리드미배경2.png" width="600"/>
 
 >_농민 뉴스: [북캉스’ 최적지 공공도서관 …지난해 이용자 2억명 ‘훌쩍’](https://www.nongmin.com/article/20240806500181?utm_source=chatgpt.com)_
 
