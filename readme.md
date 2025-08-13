@@ -389,7 +389,7 @@
 
 **하이퍼파라미터 적용 후**
 
-<img src="./img/after_acc.png" width=500/>
+<img src="./img/after_ff.png" width=800/>
 
 
 <br>
