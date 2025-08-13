@@ -370,7 +370,7 @@
 
 ## 7. 모델 성능 결과 🖨️
 
-### 7.1 테스트 성능 (Stacking + SMOTE)
+### 7.1 테스트 성능 (Stacking + SMOTEENN)
 
 ** 평가 지표**: precision / recall / F1 / accuracy
 
