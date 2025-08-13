@@ -372,9 +372,9 @@
 
 ### 7.1 테스트 성능 (Stacking + SMOTEENN)
 
-** 평가 지표**: precision / recall / F1 / accuracy
+**평가 지표** : precision / recall / F1 / accuracy
 
-** 하이퍼파라미터 조정**: hyperopt를 통해 진행
+**하이퍼파라미터 조정** : hyperopt를 통해 진행
 
 <br>
 
