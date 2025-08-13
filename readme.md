@@ -292,7 +292,7 @@
 
 ## 6. 머신러닝 파이프라인 🔧
 
-### 6.1 사용 피처
+### 6.1 사용 변수
 
 - **Target**: `churn`
 - **Features**: `gender`, `age`, `education`, `income`, `job`, `living_area_grouped`, `experience`, `distance`
