@@ -389,7 +389,7 @@
 
 **하이퍼옵튜나 적용 후**
 
-<img src="./img/after_ff.png" width=500/>
+<img src="./img/final_model.png" width=500/>
 
 
 <br>
