@@ -381,15 +381,15 @@
 #### 7.1.1 성능 비교
 
 
-**하이퍼파라미터 적용 전**
+**하이퍼옵튜나 적용 전**
 
 <img src="./img/best_model.png" width=500/>
 
 
 
-**하이퍼파라미터 적용 후**
+**하이퍼옵튜나 적용 후**
 
-<img src="./img/after_ff.png" width=800/>
+<img src="./img/after_ff.png" width=500/>
 
 
 <br>
