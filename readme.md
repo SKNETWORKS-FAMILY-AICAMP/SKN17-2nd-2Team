@@ -19,19 +19,41 @@
 
 ---
 
-## 🌟 **팀원 소개**  
-
-<br>
-
-✔️ 인상 깊게 읽은 책 또는 나를 표현할 수 있는 책을 담았습니다.
-
-<br>
-
-| 💻👩 양송이 | 💻👩 박지수 | 💻🧑 조세희| 💻🧑 김세한 | 💻🧑 양정민 |
+🌟 팀원 소개
+| 👩 양송이 | 👩 박지수 | 🧑 조세희 | 👨 김세한 | 👨 양정민 |
 |---|---|---|---|---|
-| <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMIL천만 명 이상이던 **이용자 수가 급격히 감소**했습니다. 이후 점진적으로 회복되고 있으나, 여전히 코로나 이전 수준에는 미치지 못하고 있습니다.
+| <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> |
 
-그 뿐만 아니라 다양한 온라인 콘텐츠의 확산과 전자책의 보급 그리고 코로나19 등과 같이 사회적 변화들이 도서관 이용자 수에 영향을 미치고 있습니다.
+<br>
+
+---
+
+## 프로젝트 개요
+### 1.1 프로젝트 주제 선정 배경
+<br>
+
+<img src="./img/리드미배경2.png" width="600"/>
+
+<br>
+
+>_디스커버리 뉴스: 문체부, '2025년 전국 공공도서관 통계조사' 결과 발표
+
+<img src="./img/리드미배경3.png" width="600"/>
+
+>농민 뉴스: 북캉스’ 최적지 공공도서관 …지난해 이용자 2억명 ‘훌쩍’
+
+<br>
+<br>
+
+<img src="./img/도서관이용자수그래프.png"/>
+
+>출처: 통계청 지표누리_
+
+<br>
+
+최근 도서관 이용자 수 통계에 따르면, 코로나19 팬데믹 시기(2019→2020)에 25만 명 이상이던 이용자 수가 급격히 감소했습니다. 이후 점진적으로 회복되고 있으나, 여전히 코로나 이전 수준에는 미치지 못하고 있습니다.
+
+그 뿐만 아니라 다양한 온라인 콘텐츠의 확산과 전자책의 보급 그리고 코로나19 등과 같이 사회적 변화들로 인해 도서관 이용자 수는 하락하는 추세를 보이고 있습니다.
 
 
 <br>
