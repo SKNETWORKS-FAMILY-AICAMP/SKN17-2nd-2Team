@@ -421,7 +421,7 @@
 
 
 <br>
-### 9.2 Train/Test Split 이전 SMOTE 적용
+###9.2 Train/Test Split 이전 SMOTE 적용
 
 <img src="./img/smote_acc.png" width=600/>
 
