@@ -161,9 +161,9 @@ def plot_feature_importances(model, numerical_feats, categorical_feats, ordinal_
 
 
 # --- 메인 앱 시작 ---
-st.title("서울시민 도서관 이용자 이탈 예측")
+st.title("🏢서울시민 도서관 이용자 이탈 예측📚")
 
-tab1, tab2, tab3 = st.tabs(["1️⃣ 개요", "2️⃣ 이탈 예측", "3️⃣ 결과 분석"])
+tab1, tab2, tab3, tab4 = st.tabs(["1️⃣ 개요", "2️⃣ 개인 이탈 예측", "3️⃣ 단체 이탈 예측", "4️⃣ 결과 분석"])
 
 # 페이지 개요 탭
 with tab1:
@@ -176,17 +176,17 @@ with tab1:
         st.info("""
 ### ✔️ 페이지 소개
 
-️ 이용자의 정보, 이용 패턴 등을 이용하여 **이탈 여부 파악**이 가능합니다.
+️🗨️이용자의 정보, 이용 패턴 등을 이용하여 **이탈 여부 파악**이 가능합니다.
 
-️ 실제 도서관 이용 패턴을 반영하였기 때문에 예측 결과의 **신뢰도**를 보장합니다.
+️🗨️실제 도서관 이용 패턴을 반영하였기 때문에 예측 결과의 **신뢰도**를 보장합니다.
 
-️ 도서관 서비스 개선 및 이용자 유지 전략 수립에 활용 가능한 **인사이트**를 드립니다.
+️🗨️도서관 서비스 개선 및 이용자 유지 전략 수립에 활용 가능한 **인사이트**를 드립니다.
 """)
 
     # 페이지 사용 방법
     with c2:    
         st.info("""
-###  사용 방법
+### 📍 사용 방법
 
 
 1. 예측하고자 하는 **사용자 정보** 입력
@@ -203,7 +203,7 @@ with tab1:
 with tab2:
 
     # 사용자 개인 특성 입력
-    st.header("사용자 개인 특성")
+    st.header("💁사용자 개인 특성")
     st.caption("")
 
     col1, col2, col3, col4 = st.columns(4)
@@ -240,8 +240,7 @@ with tab2:
     st.divider()
     st.caption("")
 
-    # 사용자 도서관 이용 특성 이용
-    st.header("사용자 도서관 이용 특성")
+    st.header("🪪사용자 도서관 이용 특성")
     st.caption("")
 
     col21, col22, col23 = st.columns(3)
@@ -257,6 +256,9 @@ with tab2:
     st.divider()
 
     # --- 4. 예측 버튼 및 결과 출력 ---
+    # 사용자 도서관 이용 특성 이용
+    st.header("🚀이탈 가능성 예측")
+    st.caption("")
     if st.button("예측하기", use_container_width=True, type="primary"):
         if model:
             # --- 입력값을 모델이 학습한 데이터에 사용한 값과 동일하게 변환 ---
@@ -322,7 +324,7 @@ with tab2:
 # =================================================================================
 
 # 결과 분석 탭
-with tab3:
+with tab4:
     st.header("🫧사용자 이탈 예측 분석")
 
     coll1, coll2 = st.columns(2)
@@ -338,3 +340,111 @@ with tab3:
             st.pyplot(fig_importance)
         else:
             st.warning("모델이 로드되지 않아 피처 중요도를 분석할 수 없습니다.")
+
+# 데이터셋 분석 탭
+with tab3:
+    st.header("📊 데이터셋 기반 이탈 분석")
+    st.write("이탈 여부 예측에 사용된 피처들이 각 그룹별로 어느 정도의 이탈 위험도를 보이는지 시각적으로 분석합니다.")
+    
+    uploaded_file = st.file_uploader("분석할 CSV 파일을 업로드해주세요.", type="csv")
+
+    if uploaded_file is not None:
+        try:
+            df_preview = pd.read_csv(uploaded_file)
+            st.write("##### ✔️ 업로드된 데이터 미리보기 (상위 5개)")
+            st.dataframe(df_preview.head())
+
+            if st.button("데이터셋 분석 시작", use_container_width=True, type="primary"):
+                if model:
+                    with st.spinner("AI 모델이 데이터셋 전체의 이탈 확률을 계산 중입니다... 잠시만 기다려주세요."):
+                        # --- 데이터 전처리 및 예측 ---
+                        df_analysis = df_preview.copy()
+                        
+                        required_cols = ['gender', 'age', 'education', 'income', 'job', 'living_area_grouped', 'experience', 'distance']
+                        if not all(col in df_analysis.columns for col in required_cols):
+                            missing_cols = [col for col in required_cols if col not in df_analysis.columns]
+                            st.error(f"오류: 업로드된 CSV 파일에 필수 컬럼이 없습니다: **{', '.join(missing_cols)}**")
+                            st.stop()
+
+                        df_model_input = df_analysis[required_cols]
+                        
+                        decision_scores = model.decision_function(df_model_input)
+                        churn_probabilities = 1 / (1 + np.exp(-decision_scores))
+                        df_analysis['churn_probability'] = churn_probabilities
+                        
+                        bins = [20, 30, 40, 50, 60, 70, 101]
+                        labels = ['20대', '30대', '40대', '50대', '60대', '70대 이상']
+                        df_analysis['age_group'] = pd.cut(df_analysis['age'], bins=bins, labels=labels, right=False)
+                        
+                    st.success("데이터셋 분석 완료!")
+
+                    # --- 전체 평균 이탈 확률 ---
+                    overall_churn_prob = df_analysis['churn_probability'].mean()
+                    st.metric(label="📈 전체 데이터셋 평균 이탈 확률", value=f"{overall_churn_prob:.2%}")
+                    st.divider()
+
+                    # --- 피처별 시각화 ---
+                    st.subheader("🔎 피처별 이탈 위험도 상세 분석")
+
+                    # 분석할 피처와 역변환 맵 정의
+                    features_to_plot = {
+                        'age_group': '나이대', 'living_area_grouped': '거주 지역 그룹', 'income': '소득 수준',
+                        'job': '직업', 'education': '학력', 'gender': '성별',
+                        'experience': '최근 이용 경험', 'distance': '도서관 인접성'
+                    }
+                    reverse_maps = {
+                        'gender': {0: "여자", 1: "남자"}, 'education': {v: k for k, v in education_map.items()},
+                        'income': {v: k for k, v in income_map.items()}, 'job': {v: k for k, v in job_map.items()},
+                        'experience': {0: "과거에만 이용", 1: "1년 내 이용"}, 'distance': {0: "인접 안 함", 1: "인접함"},
+                        'living_area_grouped': {1: "1그룹(핵심)", 2: "2그룹(주거)", 3: "3그룹(외곽)"}
+                    }
+
+                    feature_keys = list(features_to_plot.keys())
+
+                    # 피처 리스트를 2개씩 묶어 반복 처리
+                    for i in range(0, len(feature_keys), 2):
+                        cols = st.columns(2)
+                        
+                        # 첫 번째 컬럼 그래프
+                        feature1_key = feature_keys[i]
+                        with cols[0]:
+                            churn_by_feature = df_analysis.groupby(feature1_key)['churn_probability'].mean().sort_values(ascending=False)
+                            if feature1_key in reverse_maps:
+                                churn_by_feature.index = churn_by_feature.index.map(reverse_maps[feature1_key].get)
+                            
+                            fig, ax = plt.subplots()
+                            sns.barplot(x=churn_by_feature.index, y=churn_by_feature.values, ax=ax, palette='viridis', order=churn_by_feature.index)
+                            ax.set_title(f'{features_to_plot[feature1_key]}별 평균 이탈 확률', fontsize=14)
+                            ax.set_ylabel('평균 이탈 확률', fontsize=10)
+                            ax.set_xlabel('')
+                            ax.tick_params(axis='x', rotation=45, labelsize=9)
+                            ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{y:.0%}'))
+                            plt.tight_layout()
+                            st.pyplot(fig)
+                            if feature1_key == 'living_area_grouped':
+                                st.caption("1(핵심), 2(주거), 3(외곽)")
+
+                        # 두 번째 컬럼 그래프 (피처가 홀수 개일 경우를 대비)
+                        if i + 1 < len(feature_keys):
+                            feature2_key = feature_keys[i+1]
+                            with cols[1]:
+                                churn_by_feature = df_analysis.groupby(feature2_key)['churn_probability'].mean().sort_values(ascending=False)
+                                if feature2_key in reverse_maps:
+                                    churn_by_feature.index = churn_by_feature.index.map(reverse_maps[feature2_key].get)
+
+                                fig, ax = plt.subplots()
+                                sns.barplot(x=churn_by_feature.index, y=churn_by_feature.values, ax=ax, palette='viridis', order=churn_by_feature.index)
+                                ax.set_title(f'{features_to_plot[feature2_key]}별 평균 이탈 확률', fontsize=14)
+                                ax.set_ylabel('평균 이탈 확률', fontsize=10)
+                                ax.set_xlabel('')
+                                ax.tick_params(axis='x', rotation=45, labelsize=9)
+                                ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{y:.0%}'))
+                                plt.tight_layout()
+                                st.pyplot(fig)
+                                if feature2_key == 'living_area_grouped':
+                                    st.caption("1(핵심), 2(주거), 3(외곽)")
+
+                else:
+                    st.error("모델을 로드하지 못했습니다. 관리자에게 문의하세요.")
+        except Exception as e:
+            st.error(f"파일 처리 중 오류가 발생했습니다: {e}")
