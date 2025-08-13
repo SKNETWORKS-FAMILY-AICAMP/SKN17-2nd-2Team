@@ -422,6 +422,9 @@
 ### 9.1 불균형 데이터 처리
 - SMOTEENN를 통한 균형 조정에도 불구하고 여전히 존재하는 test data set에서의 클래스 불균형 문제 → **낮은 precision**
 
+<img src="./img/final_model.png" width=500/>
+  
+
 
 <br>
 
