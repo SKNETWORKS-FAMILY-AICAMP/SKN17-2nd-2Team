@@ -311,7 +311,7 @@
 
 <br>
 
-### 6.3 클래스 불균형 처리 
+### 6.3 도서관 이탈 데이터 불균형 문제 
 
 <img src="./img/churn_rate.png" width=300/>
 
@@ -323,6 +323,8 @@
 ### 6.4 모델 성능 향상 전략 
 
 #### 6.4.1 Base Model
+
+**평가 지표** : precision / recall / F1 / accuracy
 
 - **기본 features 구성**: 7개의 기본 features만 사용
   - `gender`, `living_area`, `job`, `age`, `education`, `income`, `child`, `experience`
@@ -368,11 +370,7 @@
 
 ---
 
-## 7. 모델 성능 결과 🖨️
-
-### 7.1 테스트 성능 (Stacking + SMOTEENN)
-
-**평가 지표** : precision / recall / F1 / accuracy
+## 7. 하이퍼 파라미터 조정 모델 성능 결과 🖨️
 
 **하이퍼파라미터 조정** : hyperopt를 통해 진행
 
