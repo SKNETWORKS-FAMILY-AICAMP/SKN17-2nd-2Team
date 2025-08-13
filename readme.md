@@ -453,15 +453,19 @@
 
 <img src="./img/page1.png" width=1000/>
    
-### 2️⃣ 이탈 예측
+### 2️⃣ 개인 이탈 예측
 
 <img src="./img/page2-1.png" width=1000/>
 
 <img src="./img/page2-2.png" width=1000/>
 
-### 3️⃣ 결과 분석
+### 3️⃣ 단체 이탈 예측
 
-<img src="./img/page3.png" width=500/>
+<img src="./img/page3.png" width=1000/>
+
+### 4️⃣ 결과 분석
+
+<img src="./img/page4.png" width=500/>
 
 <br>
 
