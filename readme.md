@@ -19,10 +19,11 @@
 
 ---
 
-🌟 팀원 소개
+## 🌟 팀원 소개
 | 👩 양송이 | 👩 박지수 | 🧑 조세희 | 👨 김세한 | 👨 양정민 |
 |---|---|---|---|---|
 | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> |
+|[@songeeeey](https://github.com/songeeeey)|[@0lipa](https://github.com/0lipa)|[@SEHEE-8546](https://github.com/SEHEE-8546)|[@kimsehan11](https://github.com/kimsehan11)|[@Yangmin](https://github.com/Yangmin3)|
 
 <br>
 
@@ -33,15 +34,13 @@
 ### 1.1 프로젝트 주제 선정 배경
 <br>
 
+<img src="./img/리드미배경1.png" width="600"/>
+
+>[디스커버리 뉴스: 문체부, '2025년 전국 공공도서관 통계조사' 결과 발표](https://www.discoverynews.kr/news/articleView.html?idxno=1064416)
+
 <img src="./img/리드미배경2.png" width="600"/>
 
-<br>
-
->_디스커버리 뉴스: 문체부, '2025년 전국 공공도서관 통계조사' 결과 발표
-
-<img src="./img/리드미배경3.png" width="600"/>
-
->농민 뉴스: 북캉스’ 최적지 공공도서관 …지난해 이용자 2억명 ‘훌쩍’
+>[농민 뉴스: 북캉스’ 최적지 공공도서관 …지난해 이용자 2억명 ‘훌쩍’](https://www.nongmin.com/article/20240806500181)
 
 <br>
 
@@ -51,7 +50,7 @@
 
 <img src="./img/도서관이용자수그래프.png"/>
 
->출처: 통계청 지표누리_
+>[출처: 통계청 지표누리](https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1639)
 
 <br>
 
