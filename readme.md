@@ -118,8 +118,7 @@
 | **분류**         | **기술/도구**                                                                            |
 |------------------|------------------------------------------------------------------------------------------|
 | **언어**         | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python)     |
-| **라이브러리**   | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy) ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas) ![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib) <br> ![Seaborn](https://img.shields.io/badge/seaborn-0C5A5A?style=for-the-badge&logo=Seaborn) ![scikitlearn](https://img.shields.io/badge/scikitlearn-green?style=for-the-badge&logo=scikitlearnlogo=xgboost) ![imbalanced-learn](https://img.shields.io/badge/imbalanced--learn-FF6B6B?style=for-the-badge)
-| **모델 저장**    | ![Joblib](https://img.shields.io/badge/Joblib-2E8B57?style=for-the-badge) |
+| **라이브러리**   | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy) ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas) ![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib) <br> ![Seaborn](https://img.shields.io/badge/seaborn-0C5A5A?style=for-the-badge&logo=Seaborn) ![scikitlearn](https://img.shields.io/badge/scikitlearn-green?style=for-the-badge&logo=scikitlearnlogo=xgboost) ![imbalanced-learn](https://img.shields.io/badge/imbalanced--learn-FF6B6B?style=for-the-badge) ![Joblib](https://img.shields.io/badge/Joblib-2E8B57?style=for-the-badge)
 | **협업 툴**      | ![GitHub](https://img.shields.io/badge/github-121011?style=for-the-badge&logo=github) ![Git](https://img.shields.io/badge/git-F05033?style=for-the-badge&logo=git)|
 
 ---
@@ -193,10 +192,11 @@
   <img src="./img/income.png" width=800/>
 
 #### 5.1.3 지역 데이터 그룹화
-서울시 25개 구를 경제·상권 특성으로 3개 군집화:
-- **Group_A**: 강남, 서초, 송파, 종로, 중구, 영등포, 용산
-- **Group_B**: 강동, 마포, 서대문, 성동, 광진, 동작, 양천
-- **Group_C**: 그 외 구
+서울시 25개 구를 경제·상권 특성으로 3개 군집화
+- 기준: 거주지/소득과 도서관 이용률 간의 [상관관계](https://www.sisain.co.kr/news/articleView.html?idxno=47046)를 바탕으로
+  - **Group_A**: 강남, 서초, 송파, 종로, 중구, 영등포, 용산
+  - **Group_B**: 강동, 마포, 서대문, 성동, 광진, 동작, 양천
+  - **Group_C**: 그 외 구
 
   <img src="./img/living_area_grouped.png" width=400/>
 
