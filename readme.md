@@ -20,6 +20,13 @@
 ---
 
 ## 🌟 팀원 소개
+
+<br>
+
+✔️ 각자 인상 깊게 읽은 책 또는 자신을 표현할 수 있는 책을 담았습니다.
+
+<br>
+
 | 👩 양송이 | 👩 박지수 | 🧑 조세희 | 👨 김세한 | 👨 양정민 |
 |---|---|---|---|---|
 | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common2.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common3.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common5.png" width="150" height="170"/> | <img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-2nd-2Team/blob/main/img/common4.jpg" width="150" height="170"/> |
